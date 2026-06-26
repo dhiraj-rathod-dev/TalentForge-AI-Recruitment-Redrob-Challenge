@@ -1,0 +1,37 @@
+Role: Senior AI Engineer – Founding Team
+
+We are building the next-generation intelligent talent discovery platform.
+We need a Senior AI Engineer who can architect and ship retrieval systems,
+ranking pipelines, and semantic search infrastructure from scratch.
+
+Required:
+- 5-9 years of experience
+- Embeddings and vector representations
+- Retrieval systems (BM25, dense retrieval, hybrid)
+- Ranking systems and Learning to Rank
+- Search infrastructure (Elasticsearch, FAISS, Milvus, Pinecone, Qdrant, Weaviate)
+- Python (expert level)
+- Evaluation frameworks (NDCG, MAP, MRR)
+- Production ML systems at scale
+
+Nice to Have:
+- Fine-tuning (LoRA, QLoRA)
+- HRTech experience
+- Distributed systems
+- Recommendation systems
+- RAG pipelines
+
+We value:
+- Product mindset and fast shipping culture
+- Startup experience
+- Real production deployments
+- Ownership mentality
+
+We don't want:
+- Pure research profiles (no production experience)
+- LangChain-only engineers
+- Consulting-only careers
+- Framework enthusiasts without depth
+- Non-NLP AI specialists (CV-only, RL-only)
+
+Location: Bangalore, Pune, Hyderabad, Delhi NCR, Noida, Mumbai (or Remote)
