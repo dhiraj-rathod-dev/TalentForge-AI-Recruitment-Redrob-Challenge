@@ -140,7 +140,7 @@ python src/rank.py
 ## Launch Dashboard
 
 ```bash
-streamlit run app.py
+python -m streamlit run app.py
 ```
 
 ---
