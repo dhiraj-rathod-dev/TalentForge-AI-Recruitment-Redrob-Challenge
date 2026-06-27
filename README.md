@@ -3,6 +3,7 @@
 ### Beyond Keyword Matching – Semantic, Behavioral & Explainable AI for Intelligent Hiring
 
 > **Redrob AI Challenge 2026 Submission**
+> 👥 Team Name:- TalentForge
 
 TalentForge AI is an end-to-end AI-powered recruitment system that ranks candidates the way an experienced recruiter would—not by matching keywords, but by understanding semantic relevance, behavioral signals, career progression, and overall role fit.
 
@@ -163,7 +164,7 @@ TalentForge AI provides an interactive Streamlit dashboard for exploring ranked 
 ## Candidate Ranking Dashboard
 
 <p align="center">
-  <img src="assets/dashboard_1.png.png" width="1000">
+  <img src="assets/dashboard_1.png" width="1000">
 </p>
 
 ---
@@ -171,7 +172,7 @@ TalentForge AI provides an interactive Streamlit dashboard for exploring ranked 
 ## Candidate Score Analytics
 
 <p align="center">
-  <img src="assets/dashboard_2.png.png" width="1000">
+  <img src="assets/dashboard_2.png" width="1000">
 </p>
 
 ---
@@ -187,7 +188,7 @@ TalentForge AI provides an interactive Streamlit dashboard for exploring ranked 
 ## Ranking Insights
 
 <p align="center">
-  <img src="assets/dashboard_4.png.png" width="1000">
+  <img src="assets/dashboard_4.png" width="1000">
 </p>
 
 ---
@@ -195,7 +196,7 @@ TalentForge AI provides an interactive Streamlit dashboard for exploring ranked 
 ## Explainable AI Reasoning
 
 <p align="center">
-  <img src="assets/dashboard_5.png.png" width="1000">
+  <img src="assets/dashboard_5.png" width="1000">
 </p>
 
 ---
@@ -276,34 +277,87 @@ TalentForge detects **7 types of suspicious profiles**:
 ---
 
 ---
+---
 
 # 👨‍💻 Developed By
 
-**Dhiraj Rathod** && **Shravani Sakore**
+<table>
+<tr>
+<td align="center">
+<a href="https://github.com/dhiraj-rathod-dev">
+<img src="https://github.com/dhiraj-rathod-dev.png" width="120px;" alt="Dhiraj Rathod"/><br />
+<b>Dhiraj Rathod</b>
+</a>
+<br />
+<a href="https://github.com/dhiraj-rathod-dev">GitHub Profile</a>
+</td>
 
-🔗 **GitHub:** https://github.com/dhiraj-rathod-dev
+<td align="center">
+<a href="https://github.com/shravanisakore">
+<img src="https://github.com/shravanisakore.png" width="120px;" alt="Shravani Sakore"/><br />
+<b>Shravani Sakore</b>
+</a>
+<br />
+<a href="https://github.com/shravanisakore">GitHub Profile</a>
+</td>
+</tr>
+</table>
 
-📂 **Repository:** https://github.com/dhiraj-rathod-dev/TalentForge-AI-Recruitment-Redrob-Challenge
+### 📂 Repository
+
+🔗 **https://github.com/dhiraj-rathod-dev/TalentForge-AI-Recruitment-Redrob-Challenge**
+
+---
+
+# 📈 Contributors
+
+<a href="https://github.com/dhiraj-rathod-dev/TalentForge-AI-Recruitment-Redrob-Challenge/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=dhiraj-rathod-dev/TalentForge-AI-Recruitment-Redrob-Challenge" />
+</a>
+
+**Contributor Statistics**
+
+- 👨‍💻 Dhiraj Rathod
+- 👩‍💻 Shravani Sakore
+
+View detailed contribution history here:
+
+🔗 https://github.com/dhiraj-rathod-dev/TalentForge-AI-Recruitment-Redrob-Challenge/graphs/contributors
 
 ---
 
 ## 📄 License & Copyright
 
-© 2026 **Dhiraj Rathod**. All Rights Reserved.
+© 2026 **Dhiraj Rathod & Shravani Sakore**. All Rights Reserved.
 
 This project was developed as part of the **Redrob AI Challenge 2026**.
 
-Unauthorized copying, modification, or redistribution of this repository or its contents without permission is prohibited.
+Unauthorized copying, modification, or redistribution of this repository or its contents without prior permission is prohibited.
 
 ---
 
 <div align="center">
 
-### ⭐ If you found this project useful, please consider giving it a star!
+## ⭐ Support the Project
 
-**TalentForge AI — Beyond Keyword Matching: Semantic, Behavioral & Explainable AI for Intelligent Hiring**
+If you found **TalentForge AI** useful, please consider giving this repository a ⭐ on GitHub.
 
-Made with ❤️ by **Dhiraj Rathod**
+### TalentForge AI
+### Beyond Keyword Matching: Semantic, Behavioral & Explainable AI for Intelligent Hiring
+
+Made with ❤️ by **Dhiraj Rathod** & **Shravani Sakore**
+
+<a href="https://github.com/dhiraj-rathod-dev/TalentForge-AI-Recruitment-Redrob-Challenge">
+<img src="https://img.shields.io/github/stars/dhiraj-rathod-dev/TalentForge-AI-Recruitment-Redrob-Challenge?style=for-the-badge" />
+</a>
+
+<a href="https://github.com/dhiraj-rathod-dev/TalentForge-AI-Recruitment-Redrob-Challenge/fork">
+<img src="https://img.shields.io/github/forks/dhiraj-rathod-dev/TalentForge-AI-Recruitment-Redrob-Challenge?style=for-the-badge" />
+</a>
+
+<a href="https://github.com/dhiraj-rathod-dev/TalentForge-AI-Recruitment-Redrob-Challenge/issues">
+<img src="https://img.shields.io/github/issues/dhiraj-rathod-dev/TalentForge-AI-Recruitment-Redrob-Challenge?style=for-the-badge" />
+</a>
 
 </div>
 
