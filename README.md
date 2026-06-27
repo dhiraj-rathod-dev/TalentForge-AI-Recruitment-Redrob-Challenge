@@ -3,7 +3,7 @@
 ### Beyond Keyword Matching – Semantic, Behavioral & Explainable AI for Intelligent Hiring
 
 > **Redrob AI Challenge 2026 Submission**
-> 👥 Team Name:- TalentForge
+> 👥 Team Name:- TalentForge_AI
 
 TalentForge AI is an end-to-end AI-powered recruitment system that ranks candidates the way an experienced recruiter would—not by matching keywords, but by understanding semantic relevance, behavioral signals, career progression, and overall role fit.
 
