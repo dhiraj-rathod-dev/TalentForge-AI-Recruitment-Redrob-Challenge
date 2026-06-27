@@ -54,6 +54,7 @@ def run_pipeline(
     top_k: int = 100,
     output_dir: str = None,
     submission_path: str = None,
+    max_candidates: int = None,
 ) -> tuple[pd.DataFrame, pd.DataFrame, float]:
     if candidates_path is None:
         script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -69,6 +70,8 @@ def run_pipeline(
 
     print("Loading candidates...")
     raw_candidates = load_candidates(candidates_path)
+    if max_candidates and len(raw_candidates) > max_candidates:
+        raw_candidates = raw_candidates[:max_candidates]
     print(f"   Loaded {len(raw_candidates)} candidates")
 
     print("Parsing job description...")
@@ -219,3 +222,4 @@ if __name__ == "__main__":
         top_k=args.top_k,
         submission_path=args.out,
     )
+

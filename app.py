@@ -49,6 +49,7 @@ WEIGHTS = {
 
 DATA_PATH = os.path.join("data", "candidates.json")
 DATA_PATH_JSONL = os.path.join(".", "candidates.jsonl")
+DATA_PATH_SAMPLE = os.path.join(".", "sample_candidates.json")
 TOP_100_PATH = os.path.join("output", "top_100_candidates.csv")
 ALL_SCORED_PATH = os.path.join("output", "all_candidates_scored.csv")
 
@@ -65,10 +66,18 @@ def reset_pipeline_results():
             del st.session_state[k]
 
 
-def run_full_pipeline():
+def run_full_pipeline(dataset_choice):
     from src.rank import run_pipeline
-    cand_path = get_candidates_path()
-    top_df, all_df, timing = run_pipeline(candidates_path=cand_path)
+    if dataset_choice == "Synthetic (500)":
+        cand_path = DATA_PATH
+        limit = 500
+    elif dataset_choice == "Sample (50)":
+        cand_path = DATA_PATH_SAMPLE
+        limit = 50
+    else:
+        cand_path = get_candidates_path()
+        limit = 100000
+    top_df, all_df, timing = run_pipeline(candidates_path=cand_path, max_candidates=limit)
     st.session_state["top_df"] = top_df
     st.session_state["all_df"] = all_df
     st.session_state["timing"] = timing
@@ -99,6 +108,22 @@ with st.sidebar:
     st.caption("Intelligent Candidate Discovery")
 
     st.divider()
+    st.subheader("Dataset Settings")
+
+    dataset_choice = st.selectbox(
+        "Select Dataset",
+        ["Full (100K real)", "Synthetic (500)", "Sample (50)"],
+        index=0,
+        help="Choose which dataset to run the pipeline on",
+    )
+
+    if st.button("Run Pipeline", type="primary", use_container_width=True):
+        with st.spinner("Running pipeline — may take a few minutes..."):
+            run_full_pipeline(dataset_choice)
+        st.success("Pipeline complete!")
+        st.rerun()
+
+    st.divider()
     st.subheader("Scoring Weights")
     for label, weight in WEIGHTS.items():
         st.progress(weight, text=f"{label}: {weight:.0%}")
@@ -108,7 +133,6 @@ with st.sidebar:
     st.text("Embedding: all-MiniLM-L6-v2")
     st.text("Fallback: TF-IDF (no GPU)")
     st.text("Search: FAISS (cosine IP)")
-    st.text("Max Candidates: 100K+")
 
     st.divider()
     st.caption("Redrob Hackathon 2025")
@@ -130,11 +154,6 @@ with tab1:
     st.header("Pipeline Dashboard")
 
     col1, col2, col3, col4 = st.columns(4)
-
-    if st.button("▶️ Run Full Pipeline", type="primary", width='stretch'):
-        with st.spinner("Running pipeline — this may take a few minutes..."):
-            top_df, all_df, timing = run_full_pipeline()
-        st.success(f"Pipeline complete in {timing:.2f}s ({timing/60:.2f} min)")
 
     top_df = st.session_state.get("top_df", None)
     all_df = st.session_state.get("all_df", None)
@@ -185,7 +204,7 @@ with tab1:
         if timing is not None:
             st.info(f"⏱️ Last pipeline run: {timing:.2f}s ({timing/60:.2f} min)")
     else:
-        st.info("No pipeline results found. Click 'Run Full Pipeline' to generate scores.")
+        st.info("No pipeline results found. Configure dataset in the sidebar and click 'Run Pipeline'.")
 
 # ══════════════════════════════════════════════════════════════════════════════
 # TAB 2 – Top 100 Candidates
@@ -404,3 +423,4 @@ with tab4:
             | **BEHAVIORAL_ANOMALY** | Impossibly high activity with zero visibility | 0.3 |
             | **FAKE_EXPERIENCE** | Inflated tenure, impossible title+exp combos | 0.2–0.4 |
             """)
+
