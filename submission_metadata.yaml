@@ -12,7 +12,6 @@ primary_contact:
 
 team_members:
   - name: "Dhiraj Rathod"
-    email: "YOUR_EMAIL@gmail.com"
     role: "Team Lead | AI/ML  | Full Stack Developer| Student"
 
   - name: "Shravani Sakore"
@@ -25,7 +24,7 @@ team_members:
 
 github_repo: "https://github.com/dhiraj-rathod-dev/TalentForge-AI-Recruitment-Redrob-Challenge"
 
-sandbox_link: "https://YOUR_STREAMLIT_OR_HUGGINGFACE_LINK"
+sandbox_link: "https://talentforge-ai-recruitment-redrob-challenge-szujfsyksbrhvmyqzb.streamlit.app/"
 
 reproduce_command: "python run_submission.py --candidates ./candidates.jsonl --out ./submission.csv"
 
