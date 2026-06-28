@@ -1,4 +1,11 @@
 # TalentForge AI — Complete Project Explanation
+🌐 Live Demo
+
+🚀 Streamlit Application
+
+🔗 https://talentforge-ai-recruitment-redrob-challenge-szujfsyksbrhvmyqzb.streamlit.app/
+
+Explore the live TalentForge AI application to upload a sample candidate dataset, generate ranked candidates, view score analytics, inspect behavioral insights, and understand AI-generated reasoning through an interactive Streamlit dashboard.
 
 ## What Is This Project?
 
