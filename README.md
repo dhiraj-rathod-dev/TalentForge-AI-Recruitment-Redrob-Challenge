@@ -22,6 +22,18 @@ TalentForge AI is an end-to-end AI-powered recruitment system that ranks candida
 * 📦 Supports 100K+ Candidate Profiles
 
 ---
+# 🌐 Live Demo
+
+🚀 **Streamlit Application**
+
+**🔗 Live Demo:**  
+https://talentforge-ai-recruitment-redrob-challenge-szujfsyksbrhvmyqzb.streamlit.app/
+
+> **Try TalentForge AI online!**  
+> Upload a sample candidate dataset, explore the interactive dashboard, analyze candidate rankings, and view AI-generated reasoning—all directly from your browser.
+
+---
+
 
 # 🏗️ System Overview
 
