@@ -147,7 +147,7 @@ with st.sidebar:
     st.text("Search: FAISS (cosine IP)")
 
     st.divider()
-    st.caption("Redrob Hackathon 2025")
+    st.caption("Redrob Hackathon 2026")
 
 # ── Tabs ─────────────────────────────────────────────────────────────────────
 
