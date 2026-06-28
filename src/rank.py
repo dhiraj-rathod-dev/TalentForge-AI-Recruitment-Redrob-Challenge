@@ -18,6 +18,8 @@ from src.reasoning_generator import ReasoningGenerator
 
 
 def detect_format(path: str) -> str:
+    if path.endswith(".csv"):
+        return "csv"
     with open(path, "r", encoding="utf-8") as f:
         first = f.read(4096).strip()
     if first.startswith("{"):
@@ -42,11 +44,23 @@ def load_candidates_json(path: str) -> list[dict]:
         return json.load(f)
 
 
+def load_candidates_csv(path: str) -> list[dict]:
+    import csv
+    candidates = []
+    with open(path, "r", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            candidates.append(row)
+    return candidates
+
+
 def load_candidates(path: str) -> list[dict]:
     fmt = detect_format(path)
     if fmt == "jsonl":
         return load_candidates_jsonl(path)
-    return load_candidates_json(path)
+    if fmt == "json":
+        return load_candidates_json(path)
+    return load_candidates_csv(path)
 
 
 def run_pipeline(

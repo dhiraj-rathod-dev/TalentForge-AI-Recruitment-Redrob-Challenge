@@ -2,8 +2,7 @@
 TalentForge AI – Streamlit Dashboard
 """
 
-import os
-import sys
+import os, sys, tempfile
 import pandas as pd
 import numpy as np
 import streamlit as st
@@ -66,9 +65,15 @@ def reset_pipeline_results():
             del st.session_state[k]
 
 
-def run_full_pipeline(dataset_choice):
+def run_full_pipeline(dataset_choice, uploaded_file=None):
     from src.rank import run_pipeline
-    if dataset_choice == "Synthetic (500)":
+    if uploaded_file is not None:
+        suffix = ".jsonl" if uploaded_file.name.endswith(".jsonl") else ".json" if uploaded_file.name.endswith(".json") else ".csv"
+        with tempfile.NamedTemporaryFile(delete=False, suffix=suffix) as tmp:
+            tmp.write(uploaded_file.getvalue())
+            cand_path = tmp.name
+        limit = None
+    elif dataset_choice == "Synthetic (500)":
         cand_path = DATA_PATH
         limit = 500
     elif dataset_choice == "Sample (50)":
@@ -110,16 +115,23 @@ with st.sidebar:
     st.divider()
     st.subheader("Dataset Settings")
 
+    uploaded_file = st.file_uploader(
+        "Upload your own dataset (JSON / JSONL / CSV)",
+        type=["json", "jsonl", "csv"],
+        help="If uploaded, this file is used instead of the dataset below",
+    )
+
     dataset_choice = st.selectbox(
         "Select Dataset",
         ["Full (100K real)", "Synthetic (500)", "Sample (50)"],
         index=0,
+        disabled=uploaded_file is not None,
         help="Choose which dataset to run the pipeline on",
     )
 
     if st.button("Run Pipeline", type="primary", use_container_width=True):
         with st.spinner("Running pipeline — may take a few minutes..."):
-            run_full_pipeline(dataset_choice)
+            run_full_pipeline(dataset_choice, uploaded_file)
         st.success("Pipeline complete!")
         st.rerun()
 
@@ -204,7 +216,7 @@ with tab1:
         if timing is not None:
             st.info(f"⏱️ Last pipeline run: {timing:.2f}s ({timing/60:.2f} min)")
     else:
-        st.info("No pipeline results found. Configure dataset in the sidebar and click 'Run Pipeline'.")
+        st.info("No pipeline results found. Upload your own dataset in the sidebar or select one, then click 'Run Pipeline'.")
 
 # ══════════════════════════════════════════════════════════════════════════════
 # TAB 2 – Top 100 Candidates
